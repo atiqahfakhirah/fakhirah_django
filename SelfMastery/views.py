@@ -10,17 +10,17 @@ def home(request):
     posts = Blog.objects.filter(status=1)
     return render(request, 'home.html', {'categories': categories, 'pages': pages, 'posts': posts})
 
-def category_list(request):
+def category(request):
     categories = Category.objects.all()
-    return render(request, 'category_list.html', {'categories': categories})
+    return render(request, 'category.html', {'categories': categories})
 
-def post_list(request):
+def about(request):
     posts = Blog.objects.filter(status=1)
-    return render(request, 'post_list.html', {'posts': posts})
+    return render(request, 'about.html', {'posts': posts})
 
-def page_list(request):
+def blog(request):
     pages = Page.objects.filter(is_published=True)
-    return render(request, 'page_list.html', {'pages': pages})
+    return render(request, 'blog.html', {'pages': pages})
 
 def post_detail(request, slug):
     post = get_object_or_404(Blog, slug=slug, status=1)

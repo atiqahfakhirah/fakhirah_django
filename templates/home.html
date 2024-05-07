@@ -1,37 +1,78 @@
-<!-- templates/home.html -->
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Welcome to Our Blog</title>
+    <title>Pengembangan Diri</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <h1>Welcome to Our Blog</h1>
+    <header>
+        <nav class="navbar navbar-expand-lg navbar-light bg-light">
+            <a class="navbar-brand" href="#">Pengembangan Diri</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
 
-    <h2>Categories</h2>
-    <ul>
-        {% for category in categories %}
-            <li>{{ category.category }}</li>
-        {% endfor %}
-    </ul>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav mr-auto">
+                    <li class="nav-item active">
+                        <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/about/">About</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/blog/">Blog</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/category/">Category</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/contact/">Contact</a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+    </header>
 
-    <h2>Pages</h2>
-    <ul>
-        {% for page in pages %}
-            <li><a href="{% url 'page_detail' page.slug %}">{{ page.title }}</a></li>
-        {% endfor %}
-    </ul>
+    <div class="container mt-5">
+        <h1>Selamat Datang di Halaman Pengembangan Diri</h1>
+        <img src="https://blogger.googleusercontent.com/img/a/AVvXsEg4x0HqeoNwq6hgiEJBuxlRcxxulzn_v-OfmjoXcyqVCsSgMjg5B0H9WDxHoMpLjnvB1tpJeXpEirk7s1jp1VD8ha_wm9yaiwTnja4tJMi7m7L59WQklcr5_Qi8FK3fl2CCtNpfQwozn2lVPf7Dve1qIEBudU-ruYfyy4fl8OwkJEQMvWbdKVLADMQbVyg" alt="Gambar Pengembangan Diri" class="img-fluid">
+        <p>
+            Pengembangan diri adalah proses meningkatkan kemampuan, keterampilan, pengetahuan, dan kesadaran diri untuk mencapai tujuan hidup yang lebih baik. Ini melibatkan eksplorasi diri, pembelajaran kontinu, dan pertumbuhan pribadi.
+        </p>
+        <h2>Mengapa Pengembangan Diri Penting?</h2>
+        <p>
+            Pengembangan diri penting karena membantu seseorang menjadi versi terbaik dari dirinya sendiri. Ini membuka peluang baru, meningkatkan kebahagiaan, dan memperluas pemahaman tentang dunia dan diri sendiri.
+        </p>
+        <h2>Cara Mengembangkan Diri</h2>
+        <p>
+            Ada banyak cara untuk mengembangkan diri, termasuk:
+            <ul>
+                <li>Membaca buku dan artikel yang mendidik</li>
+                <li>Menjalin hubungan yang positif dengan orang-orang yang menginspirasi Anda</li>
+                <li>Menghadiri seminar, lokakarya, dan konferensi</li>
+                <li>Menetapkan tujuan dan merencanakan langkah-langkah untuk mencapainya</li>
+                <li>Mendengarkan dan menerima umpan balik</li>
+                <li>Menjaga kesehatan fisik dan mental</li>
+            </ul>
+        </p>
+        <p>
+            Dengan komitmen dan ketekunan, setiap orang dapat mencapai pertumbuhan pribadi yang signifikan dalam hidup mereka.
+        </p>
+       
+    </div>
 
-    <h2>Posts</h2>
-    <ul>
-        {% for post in posts %}
-            <li><a href="{% url 'post_detail' post.slug %}">{{ post.title }}</a></li>
-            {% if post.image %}
-            <img src="{{ post.image.url }}" alt="{{ post.title }}">
-        {% endif %}
-        {% endfor %}
-    </ul>
+    <footer class="footer mt-auto py-3 bg-light">
+        <div class="container text-center">
+            <span class="text-muted">Hak Cipta &copy; 2024 Pengembangan Diri</span>
+        </div>
+    </footer>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 </body>
 </html>
