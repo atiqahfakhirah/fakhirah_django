@@ -22,6 +22,10 @@ def blog(request):
     pages = Page.objects.filter(is_published=True)
     return render(request, 'blog.html', {'pages': pages})
 
+def contact(request):
+    pages = Page.objects.filter(is_published=True)
+    return render(request, 'contact.html', {'pages': pages})
+
 def post_detail(request, slug):
     post = get_object_or_404(Blog, slug=slug, status=1)
     return render(request, 'post_detail.html', {'post': post})
